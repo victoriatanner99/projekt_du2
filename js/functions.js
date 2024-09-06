@@ -18,6 +18,10 @@ function click_filter_element (event) {
     NO RETURN VALUE
 
   */
+
+
+    
+    // GLÖM INTE ATT DENNA FUNKTIONEN SKA ANVÄNDA SIG AV UPDATE_PROGRAMMES SOM ÄR LÄNGRE NER!!!
   
 }
 
@@ -36,16 +40,23 @@ function create_filter_element (data) {
       No control of arguments.
 
     SIDE-EFFECTS
-      Creates a new dom-element with the tag "li".
-      Gives the new dom-element the class contained in data.class
-      Appends the new dom-element to the element referenced in data.parent
-      Sets the text content of the new dom-element to data.textContent
-      Sets the function click_filter_element as a listener to "click" for the new dom-element
+      1. Creates a new dom-element with the tag "li".
+      2. Gives the new dom-element the class contained in data.class
+      3. Appends the new dom-element to the element referenced in data.parent
+      4. Sets the text content of the new dom-element to data.textContent
+      5. Sets the function click_filter_element as a listener to "click" for the new dom-element
 
     RETURN VALUE
       Returns a reference to the new dom-element
   */
 
+      const li = document.createElement("li");
+      li.classList.add(data.class);
+      data.parent.appendChild(li);
+      li.textContent = data.textContent;
+      li.addEventListener("click", click_filter_element);
+
+      return li;
 }
 
 

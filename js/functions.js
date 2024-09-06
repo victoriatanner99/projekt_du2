@@ -2,13 +2,10 @@
 // G
 // CODE According to specification
 function click_filter_element (event) {
-  const filter_element = event.target
-  filter_element.classList.toggle("selected");
-  update_programmes();
+
   /*
     ARGUMENTS
       event: event-object created when user clicks on one of the filter elements.
-    
 
     SIDE-EFFECTS
       Marks the clicked filter element as selected / unselected.
@@ -28,13 +25,6 @@ function click_filter_element (event) {
 // G
 // CODE according to specification
 function create_filter_element (data) {
-  const li_dom = document.createElement("li");
-  li_dom.classList.add(data.class)
-  li_dom.textContent = data.textContent;
-  data.parent.append(li_dom);
-  li_dom.addEventListener("click", click_filter_element);
-
-  return(li_dom);
 
   /*
     ARGUMENTS

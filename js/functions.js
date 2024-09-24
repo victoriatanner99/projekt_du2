@@ -17,6 +17,9 @@ function click_filter_element(event) {
 
   */
   // GLÖM INTE ATT DENNA FUNKTIONEN SKA ANVÄNDA SIG AV UPDATE_PROGRAMMES SOM ÄR LÄNGRE NER!!!
+
+  event.target.classList.toggle("selected");
+  update_programmes();
 }
 
 // G
@@ -218,10 +221,10 @@ function create_programme(programme) {
   programme_subject = array_find(SUBJECTS, match_subject).name;
 
   //Programmes
-  function match_programmesID(programme) {
+  function match_programmesID (programme) {
     return programme.id === programme.id;
   }
-  programme_programme = array_find(PROGRAMMES, match_programmesID).name;
+  programme_programme = array_find(PROGRAMMES,match_programmesID).name;
 
   container.innerHTML = `
       <div>

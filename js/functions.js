@@ -250,6 +250,19 @@ function update_programmes() {
       NO RETURN VALUE
 
   */
+      filteredProgrammes = read_filters(); //Deklarerar en variabel som innehåller en array som read_filters har returnerat
+      const programmesContainer = document.getElementById("programmes"); //hämtar 
+      const emptyPrograms = programmesContainer.querySelector("p");
+      const programmesUl = programmesContainer.querySelector("ul");  
+      
+      programmesUl.innerHTML = "";
+      
+      if (filteredProgrammes.length !== 0) {
+        emptyPrograms.style.display = "none";
+        array_each(filteredProgrammes, create_programme); // Array_each skickar varje element i arrayen som argument för funktionen man skickar med. I vårt fall är funktionen "create_programme"!
+      } else {
+        emptyPrograms.style.display = "block";
+      }
 }
 
 // G

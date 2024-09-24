@@ -16,7 +16,6 @@ function click_filter_element(event) {
     NO RETURN VALUE
 
   */
-  // GLÖM INTE ATT DENNA FUNKTIONEN SKA ANVÄNDA SIG AV UPDATE_PROGRAMMES SOM ÄR LÄNGRE NER!!!
 
   event.target.classList.toggle("selected");
   update_programmes();

@@ -1,3 +1,7 @@
+#top_images > :nth-child(1) {background-image: url("../media/geo_images/united_kingdom_normal_5.jpg");}
+#top_images > :nth-child(2) {background-image: url("../media/geo_images/malmo_normal_2.jpg");}
+#top_images > :nth-child(3) {background-image: url("../media/geo_images/new_york_normal_1.jpg");}
+
 @font-face {
   font-family: 'Roboto Condensed 300';
   src: url('../fonts/RobotoCondensed_light/RobotoCondensedLight.eot');

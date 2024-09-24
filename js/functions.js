@@ -16,9 +16,7 @@ function click_filter_element(event) {
     NO RETURN VALUE
 
   */
-
-  event.target.classList.toggle("selected");
-  update_programmes();
+  // GLÖM INTE ATT DENNA FUNKTIONEN SKA ANVÄNDA SIG AV UPDATE_PROGRAMMES SOM ÄR LÄNGRE NER!!!
 }
 
 // G
@@ -188,6 +186,52 @@ function create_programme(programme) {
     NO RETURN VALUE
 
   */
+
+  const parent = document.querySelector("#programmes > ul");
+
+  const container = document.createElement("div");
+  container.className = "programme";
+  parent.appendChild(container);
+
+  //Language
+  function match_languageId(language) {
+    return language.id === programme.languageID;
+  }
+  programme_language = array_find(LANGUAGES, match_languageId).name;
+
+  //University
+  function match_university(city) {
+    return city.id === programme.universityID;
+  }
+  programme_university = array_find(UNIVERSITIES, match_university).name;
+
+  //Levels
+  function match_levelsId(level) {
+    return level.id === programme.levelID;
+  }
+  programme_level = array_find(LEVELS, match_levelsId).name;
+
+  //Subject
+  function match_subject(subject) {
+    return subject.id === programme.subjectID;
+  }
+  programme_subject = array_find(SUBJECTS, match_subject).name;
+
+  //Programmes
+  function match_programmesID(programme) {
+    return programme.id === programme.id;
+  }
+  programme_programme = array_find(PROGRAMMES, match_programmesID).name;
+
+  container.innerHTML = `
+      <div>
+        <p>${programme_university}</p>
+        <p>${programme_language}</p>
+        <p>${programme_level}</p>
+        <p>${programme_subject}</p>
+        <p>${programme_programme}</p>
+      </div>
+    `;
 }
 
 // G

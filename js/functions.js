@@ -16,7 +16,7 @@ function click_filter_element(event) {
     NO RETURN VALUE
 
   */
-
+  
   event.target.classList.toggle("selected");
   update_programmes();
 }
@@ -93,7 +93,28 @@ function toggle_cities(event) {
 // WRITE SPECIFICATION
 // ATTENTION: You need to write the specification of all three functions:
 //            create_countries_cities_filters, create_country and create_city
+
+/*
+Argument:
+  Does not take any argument.
+
+Side-effects:
+  Creates country list-item and the filter elements for the cities.
+
+Return value: No return value
+*/
 function create_countries_cities_filters() {
+
+  /* 
+  Argument:
+    Takes an object as an argument.
+
+  Side-effects:
+    Creates a filter option for the country provided as argument and then creates a filter option for all the cities within that country using the keys id and name.
+
+  Return value:
+    Does not return anything.
+  */
   function create_country(country) {
     const dom = document.createElement("div");
     dom.classList.add("country");
@@ -113,6 +134,14 @@ function create_countries_cities_filters() {
 
     array_each(cities, create_city);
   }
+
+  /* 
+  Argument: Takes an object as an argument
+
+  Side effect: Creates a filter element for the city based on the keys countryID, name and id.
+
+  Return value: No return value
+  */
   function create_city(city) {
     const dom = create_filter_element({
       parent: document.querySelector(`#country_${city.countryID} > ul`),
@@ -130,6 +159,25 @@ function create_countries_cities_filters() {
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
 function create_levels_filter() {
+
+function create_filter(name_of_array, data) {
+  let correct_array;
+  let correct_function;
+
+  if (name_of_array === "level") correct_array = LEVELS;
+  else if (name_of_array === "subject") correct_array = SUBJECTS;
+  else if (name_of_array === "language") correct_array = LANGUAGES;
+  else return "No such array exists!";
+
+  const dom = create_filter_element({
+    parent: document.querySelector(`#${name_of_array}_filter > ul`),
+    class: "selected",
+    textContent: data.name
+  })
+
+  array_each(correct_array)
+}
+
   function create_level(level) {
     const dom = create_filter_element({
       parent: document.querySelector("#level_filter > ul"),

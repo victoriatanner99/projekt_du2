@@ -154,43 +154,9 @@ function create_countries_cities_filters() {
   array_each(COUNTRIES, create_country);
 }
 
-// G
-// ABSTRACT AND WRITE SPECIFICATION
-//    As you can see, all three functions below do basically the same thing.
-//    Abstract them to one function, and write the specification of that function.
-// function create_levels_filter() {
-
-// function create_filter(name_of_array, data) {
-//   let correct_array;
-//   let correct_function;
-
-//   if (name_of_array === "level") correct_array = LEVELS;
-//   else if (name_of_array === "subject") correct_array = SUBJECTS;
-//   else if (name_of_array === "language") correct_array = LANGUAGES;
-//   else return "No such array exists!";
-
-//   const dom = create_filter_element({
-//     parent: document.querySelector(`#${name_of_array}_filter > ul`),
-//     class: "selected",
-//     textContent: data.name
-//   })
-
-//   array_each(correct_array)
-// }
-
-//   function create_level(level) {
-//     const dom = create_filter_element({
-//       parent: document.querySelector("#level_filter > ul"),
-//       class: "selected",
-//       textContent: level.name,
-//     });
-//     dom.dataset.id = level.id;
-//   }
-//   array_each(LEVELS, create_level);
-// }
 
 function universal_filter_creator(parent) {
-  // Ändra namn på funktionen!
+
   function create_filter_merge(data) {
     const dom = create_filter_element({
       parent: document.querySelector(`#${parent}_filter > ul`),
@@ -318,7 +284,17 @@ function update_programmes() {
 // in the code review (kodredovisning)
 
 // Optional VG: Which parts of the function's code could be abstracted?
-//              Implement it
+// Implement it
+
+  /* 
+  Argument: No arguments 
+
+  Side effect: Gets selected filters from the DOM and filters the list of programmes based on city, level, language, subject, and search input
+
+  Return value: Returns a list of programmes that match the selected filters and search input
+
+  */
+
 function read_filters() {
   const city_selected_dom = document.querySelectorAll(
     "#country_filter li.selected"

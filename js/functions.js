@@ -95,6 +95,8 @@ function toggle_cities(event) {
 //            create_countries_cities_filters, create_country and create_city
 
 /*
+SPECIFICATION: create_countries_cities_filters
+
 Argument:
   Does not take any argument.
 
@@ -106,6 +108,7 @@ Return value: No return value
 function create_countries_cities_filters() {
 
   /* 
+  SPECIFICATION: create_country
   Argument:
     Takes an object as an argument.
 
@@ -136,6 +139,7 @@ function create_countries_cities_filters() {
   }
 
   /* 
+  SPECIFICATION: create_city
   Argument: Takes an object as an argument
 
   Side effect: Creates a filter element for the city based on the keys countryID, name and id.
@@ -154,7 +158,18 @@ function create_countries_cities_filters() {
   array_each(COUNTRIES, create_country);
 }
 
+// G
+// ABSTRACT AND WRITE SPECIFICATION
+//    As you can see, all three functions below do basically the same thing.
+//    Abstract them to one function, and write the specification of that function.
 
+/* 
+  Argument: Specifies the type of filter to create level, subject and language
+
+  Side effect: Adds filter elements to the DOM under #<parent>_filter > ul using data from the arrays
+
+  Return value: No return value
+  */
 function universal_filter_creator(parent) {
 
   function create_filter_merge(data) {

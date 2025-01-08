@@ -1,5 +1,3 @@
-
-
 /*
 
 Nedan finns databasen.

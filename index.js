@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 /*
 
   Notice the images on the page header.
@@ -13,24 +11,10 @@
 */
 
 
-
-// Create Filter Elements
-// create_levels_filter();
-// create_subjects_filter();
-// create_language_filter();
 universal_filter_creator("level");
 universal_filter_creator("subject");
 universal_filter_creator("language");
 create_countries_cities_filters();
-
-/* // Create Filter Elements
-// create_levels_filter();
-// create_subjects_filter();
-// create_language_filter();
-create_filter_element("level", "vic")
-create_filter_element("subject", "vic")
-create_filter_element("language", "vic")
-create_countries_cities_filters(); */
 
 // Add Interaction of search field button
 document.querySelector("#search_field button").addEventListener("click", update_programmes);
